@@ -1,0 +1,224 @@
+<!-- UPDATED PORTFOLIO WITH FIXED CONTACT ALIGNMENT + EASY HIRE POPUPS -->
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:#f5f7fb;color:#111}
+
+nav{display:flex;justify-content:space-between;align-items:center;padding:18px 60px;background:white;box-shadow:0 4px 18px rgba(0,0,0,.05);position:sticky;top:0;z-index:10}
+nav h2{color:#4f46e5}
+nav ul{display:flex;gap:26px;list-style:none}
+nav a{text-decoration:none;color:#333;font-weight:500}
+nav a:hover{color:#4f46e5}
+
+.hero{padding:120px 20px;text-align:center;background:linear-gradient(135deg,#4f46e5,#6366f1);color:white}
+.hero h1{font-size:46px;margin-bottom:16px}
+.hero p{max-width:760px;margin:auto;opacity:.95;font-size:17px}
+.btn{display:inline-block;margin-top:24px;padding:12px 28px;border-radius:10px;background:white;color:#4f46e5;font-weight:600;text-decoration:none;cursor:pointer}
+
+section{padding:85px 20px;max-width:1100px;margin:auto}
+h2{font-size:34px;margin-bottom:16px;text-align:center}
+.sub{text-align:center;color:#555;max-width:760px;margin:0 auto 40px}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+.card{background:white;padding:24px;border-radius:14px;box-shadow:0 8px 24px rgba(0,0,0,.06);transition:.25s;cursor:pointer}
+.card:hover{transform:translateY(-6px)}
+.card h3{color:#4f46e5;margin-bottom:10px}
+
+.badge{display:inline-block;background:#eef2ff;color:#4f46e5;padding:5px 10px;border-radius:999px;font-size:12px;margin-bottom:10px}
+
+.about-box{background:white;padding:32px;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.06);line-height:1.7}
+
+footer{text-align:center;padding:32px;background:white;margin-top:60px;color:#666}
+
+/* MODAL */
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6);justify-content:center;align-items:center;padding:20px}
+.modal-box{background:white;border-radius:14px;max-width:650px;width:100%;padding:26px;text-align:left;position:relative}
+.close{position:absolute;top:12px;right:16px;font-size:22px;cursor:pointer}
+input,textarea{width:100%;padding:10px;margin-top:10px;border:1px solid #ddd;border-radius:8px}
+.submit{margin-top:12px;background:#4f46e5;color:white;border:none;padding:10px 16px;border-radius:8px;cursor:pointer}
+.center{text-align:center}
+</style>
+
+<nav>
+<h2>Tathagat Aman</h2>
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#courses">Courses</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<div class="hero">
+<h1>Data Engineering & Generative AI Solutions</h1>
+<p>Helping organizations design scalable data platforms and real‑world Generative AI applications using Azure, Databricks, Python, and modern LLM technologies.</p>
+<a class="btn" onclick="openContactModal()">Hire Me / Discuss Project</a>
+</div>
+
+<section id="about">
+<h2>About Me</h2>
+<p class="sub">Professional experience, enterprise delivery, and real‑world AI implementation.</p>
+
+<div class="about-box">
+<p>I am an Azure Data Engineer with <b>5+ years of hands‑on industry experience</b> building scalable ETL pipelines, enterprise data lakes, and analytics platforms using <b>Azure Data Factory, Databricks, SQL, and Python</b>.</p>
+
+<p>Across my professional journey, I have worked on <b>end‑to‑end data engineering solutions</b> including ingestion, transformation, data quality validation, medallion architecture design, and production optimization for enterprise‑scale systems.</p>
+
+<p>More recently, I have expanded into <b>Generative AI and intelligent data applications</b>, building Proof‑of‑Concept systems such as:</p>
+
+<ul style="margin-left:18px;margin-top:10px;line-height:1.8">
+<li>Enterprise RAG document chatbots</li>
+<li>AI agents capable of reasoning and automation</li>
+<li>GenAI‑driven data reconciliation and rule generation</li>
+</ul>
+
+<p style="margin-top:12px">My focus is to help companies move from <b>raw data → intelligence → automation</b> using a strong foundation of data engineering combined with modern AI capabilities.</p>
+</div>
+</section>
+
+<section id="services">
+<h2>Services</h2>
+<p class="sub">Click the arrow on any service to quickly send me your requirement, hiring inquiry, or project discussion.</p>
+
+<div class="grid">
+
+<div class="card">
+<span class="badge">Freelancing</span>
+<h3>Data Engineering Solutions</h3>
+<p>ETL pipelines, Azure Databricks architecture, and scalable analytics platforms.</p>
+<p style="margin-top:14px;font-weight:600;color:#4f46e5;cursor:pointer" onclick="openContactModal('Data Engineering')">→ Hire me for this</p>
+</div>
+
+<div class="card">
+<span class="badge">Freelancing</span>
+<h3>GenAI Application Development</h3>
+<p>Enterprise RAG chatbots, AI agents, and intelligent automation on business data.</p>
+<p style="margin-top:14px;font-weight:600;color:#4f46e5;cursor:pointer" onclick="openContactModal('GenAI Application')">→ Discuss this use case</p>
+</div>
+
+<div class="card">
+<span class="badge">Training</span>
+<h3>Industry‑Focused Online Courses</h3>
+<p>Practical Data Engineering, SQL, and GenAI programs. <b>Launching Soon</b></p>
+<p style="margin-top:14px;font-weight:600;color:#4f46e5;cursor:pointer" onclick="openContactModal('Online Courses')">→ Get early access</p>
+</div>
+
+</div>
+</section>
+
+<section id="projects">
+<h2>Projects</h2>
+<p class="sub">Click any project to view details and request a demo.</p>
+
+<div class="grid">
+
+<div class="card" onclick="openProject('End‑to‑End Data Engineering Enterprise Solution')">
+<h3>End‑to‑End Data Engineering Enterprise Solution</h3>
+<p>Complete enterprise pipeline covering ingestion, transformation, data quality, medallion architecture, and analytics delivery using Azure Data Factory, Databricks, SQL, and Python.</p>
+</div>
+
+<div class="card" onclick="openProject('Enterprise RAG Chatbot')">
+<h3>Enterprise RAG Chatbot</h3>
+<p>Secure document‑aware chatbot that enables organizations to query internal knowledge using modern LLMs and vector search.</p>
+</div>
+
+<div class="card" onclick="openProject('GenAI Reconciliation Engine')">
+<h3>GenAI Reconciliation Engine</h3>
+<p>AI‑driven reconciliation system that generates validation rules, mappings, and SQL logic to automate complex data comparison workflows.</p>
+</div>
+
+<div class="card" onclick="openProject('Autonomous AI Agents')">
+<h3>Autonomous AI Agents</h3>
+<p>Tool‑integrated intelligent agents capable of reasoning, executing workflows, and assisting enterprise decision making.</p>
+</div>
+
+</div>
+</section>
+
+<section id="courses">
+<h2>Online Courses</h2>
+<p class="sub">Industry‑ready learning programs designed from real project experience.</p>
+
+<div class="grid">
+<div class="card">
+<h3>End‑to‑End Azure Databricks Data Engineering</h3>
+<p>Build real ETL/ELT pipelines, medallion architecture, and production data platforms.</p>
+<p style="margin-top:10px;font-weight:600;color:#4f46e5">Launching Soon</p>
+</div>
+
+<div class="card">
+<h3>Generative AI for Data Engineers (RAG + Agents)</h3>
+<p>Design enterprise GenAI applications on top of structured and unstructured data.</p>
+<p style="margin-top:10px;font-weight:600;color:#4f46e5">Launching Soon</p>
+</div>
+
+<div class="card">
+<h3>Top SQL Interview Questions for Data Engineering</h3>
+<p>Practical SQL problems, optimization techniques, and real interview preparation.</p>
+<p style="margin-top:10px;font-weight:600;color:#4f46e5">Launching Soon</p>
+</div>
+</div>
+</section>
+
+<section id="contact" class="center">
+<h2>Contact</h2>
+<p class="sub">Interested in discussing your use case, freelancing requirement, or project idea? Send me your details and I will get back to you.</p>
+<button class="btn" onclick="openContactModal()">Hire Me / Discuss Your Use Case</button>
+</section>
+
+<footer>© 2026 Tathagat Aman • Data Engineering & GenAI</footer>
+
+<div id="modal" class="modal" onclick="closeModal()">
+<div class="modal-box" onclick="event.stopPropagation()">
+<span class="close" onclick="closeModal()">×</span>
+<div id="modal-body"></div>
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+(function(){
+emailjs.init('4F-i6LXtCbMEVfRck');
+})();
+
+function sendEmail(service){
+const email=document.getElementById('user-email').value;
+const message=document.getElementById('user-message').value;
+
+emailjs.send('service_x0uwpna','template_default',{
+from_email:email,
+message:message,
+service:service
+}).then(()=>{
+alert('Message sent successfully! I will contact you soon.');
+closeModal();
+}).catch(()=>{
+alert('Failed to send message. Please try again.');
+});
+}
+
+function openProject(name){
+document.getElementById('modal-body').innerHTML=`
+<h2>${name}</h2>
+<p>Request a demo or ask questions.</p>
+<input id='user-email' placeholder='Your Email'>
+<textarea id='user-message' placeholder='Your Message'></textarea>
+<button class='submit' onclick="sendEmail('${name}')">Send Request</button>`;
+document.getElementById('modal').style.display='flex';
+}
+
+function openContactModal(service='General Inquiry'){
+document.getElementById('modal-body').innerHTML=`
+<h2>Contact Me</h2>
+<p>Regarding: <b>${service}</b></p>
+<input id='user-email' placeholder='Your Email'>
+<textarea id='user-message' placeholder='Write your requirement...'></textarea>
+<button class='submit' onclick="sendEmail('${service}')">Send Message</button>`;
+document.getElementById('modal').style.display='flex';
+}
+
+function closeModal(){
+document.getElementById('modal').style.display='none';
+}
+</script>
