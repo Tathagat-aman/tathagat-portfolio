@@ -25,10 +25,11 @@
             height: 400px;
             background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
             border-radius: 50%;
-            pointer-events: none;
+            pointer-events: none; /* Ensures the glow doesn't block clicking */
             z-index: 0;
             transform: translate(-50%, -50%);
             transition: width 0.3s, height 0.3s;
+            mix-blend-mode: screen; /* Helps visibility over dark backgrounds */
         }
 
         /* RESTORED: Cleaner Single Dot Background */
@@ -44,7 +45,8 @@
         }
 
         * { margin:0; padding:0; box-sizing:border-box; font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
-        body { background: var(--bg); color: var(--text-main); line-height: 1.6; overflow-x: hidden; cursor: none; }
+        /* FIX: Changed cursor from none to auto to show your default cursor */
+        body { background: var(--bg); color: var(--text-main); line-height: 1.6; overflow-x: hidden; cursor: auto; }
 
         .reveal { opacity: 0; transform: translateY(30px); transition: 1s all ease; }
         .reveal.active { opacity: 1; transform: translateY(0); }
@@ -176,12 +178,11 @@
             .hero h1 { font-size: 2.8rem; } 
             .hero { padding: 80px 0 40px; }
             .container { padding: 0 20px; }
-            nav ul { display: none; } /* Standard for mobile simplicity */
+            nav ul { display: none; }
             .about-grid { grid-template-columns: 1fr; gap: 30px; }
             .grid { grid-template-columns: 1fr; }
-            body { cursor: auto; }
             #cursor-glow { display: none; }
-            .hero div { flex-direction: column; } /* Stack buttons on mobile */
+            .hero div { flex-direction: column; }
         }
     </style>
 </head>
@@ -242,7 +243,7 @@
                         <li>High-Scale Pipeline Monitoring</li>
                         <li>Data Quality & Integrity Frameworks</li>
                     </ul>
-                    <button class="btn btn-primary" style="width: 100%; margin-top: 20px;" onclick="openModal('Inquiry: Data Engineering')">Hire Me</button>
+                    <button class="btn btn-primary" style="width: 100%; margin-top: 20px;" onclick="openModal('Enquiry: Data Engineering')">Hire Me</button>
                 </div>
                 <div class="s-card">
                     <h3>GenAI Development</h3>
@@ -252,7 +253,7 @@
                         <li>Model Serving & Custom Endpoints</li>
                         <li>LLM-Powered Data Automation</li>
                     </ul>
-                    <button class="btn btn-primary" style="width: 100%; margin-top: 20px;" onclick="openModal('Inquiry: GenAI')">Build with AI</button>
+                    <button class="btn btn-primary" style="width: 100%; margin-top: 20px;" onclick="openModal('Enquiry: GenAI')">Build with AI</button>
                 </div>
             </div>
         </section>
@@ -341,7 +342,7 @@
             <h2 id="mTitle">Inquire</h2>
             <input type="email" id="uEmail" placeholder="Your Email">
             <textarea id="uMsg" rows="5" placeholder="Details..."></textarea>
-            <button class="btn btn-primary" style="width: 100%" onclick="submitForm()">Send Inquiry</button>
+            <button class="btn btn-primary" style="width: 100%" onclick="submitForm()">Send Enquiry</button>
         </div>
     </div>
 
