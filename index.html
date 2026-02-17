@@ -85,6 +85,7 @@
         .btn {
             display: inline-block; padding: 14px 30px; border-radius: 12px;
             font-weight: 700; text-decoration: none; cursor: pointer; border: none; transition: 0.3s;
+            text-align: center;
         }
         .btn-primary { background: var(--primary); color: white; }
         .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3); }
@@ -169,11 +170,18 @@
         .socials a:hover { transform: scale(1.2) rotate(5deg); }
         .li-icon { color: #0077b5; } .yt-icon { color: #ff0000; } .gm-icon { color: #ea4335; }
 
+        /* FIXED MOBILE OPTIMIZATIONS */
         @media (max-width: 768px) { 
             .p-card { min-width: 85vw; max-width: 95vw; }
             .hero h1 { font-size: 2.8rem; } 
+            .hero { padding: 80px 0 40px; }
+            .container { padding: 0 20px; }
+            nav ul { display: none; } /* Standard for mobile simplicity */
+            .about-grid { grid-template-columns: 1fr; gap: 30px; }
+            .grid { grid-template-columns: 1fr; }
             body { cursor: auto; }
             #cursor-glow { display: none; }
+            .hero div { flex-direction: column; } /* Stack buttons on mobile */
         }
     </style>
 </head>
@@ -354,14 +362,11 @@
         }
         window.onclick = function(e) { if (e.target == document.getElementById('contactModal')) closeModal(); }
 
-        // --- BACKGROUND & CURSOR LOGIC ---
-
         const glow = document.getElementById('cursor-glow');
         const canvas = document.getElementById('data-bg');
         const ctx = canvas.getContext('2d');
         let particles = [];
 
-        // Cursor Follow
         window.addEventListener('mousemove', (e) => {
             glow.style.left = e.clientX + 'px';
             glow.style.top = e.clientY + 'px';
@@ -406,7 +411,6 @@
         initCanvas();
         animate();
 
-        // Typing Effect
         const textElement = document.getElementById('typing-text');
         const phrases = ["Data-Driven Intelligence.", "High-Scale ETL Pipelines.", "Agentic AI Workflows.", "Azure/Databricks Systems."];
         let i = 0, j = 0, isDeleting = false;
@@ -419,7 +423,6 @@
         }
         type();
 
-        // Scroll Progress & Reveal
         window.addEventListener('scroll', () => {
             let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
             let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
